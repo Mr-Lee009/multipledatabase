@@ -1,6 +1,5 @@
 package com.example.multipledatabase.dto;
 
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,5 +15,26 @@ public class ResponseBuilderDTO {
         response.setBody(body);
         return response;
     }
+
+    public ResponseDTO success(String message) {
+        ResponseDTO response = new ResponseDTO<>();
+        response.setStatus(Status.SUCCESS);
+        response.setMessage(message);
+        return response;
+    }
+
+    public ResponseDTO error(String message) {
+        ResponseDTO response = new ResponseDTO<>();
+        response.setStatus(Status.ERROR);
+        response.setMessage(message);
+        return response;
+    }
+    public ResponseDTO exception(String message) {
+        ResponseDTO response = new ResponseDTO<>();
+        response.setStatus(Status.EXCEPTION);
+        response.setMessage(message);
+        return response;
+    }
+
 
 }

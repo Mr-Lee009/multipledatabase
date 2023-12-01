@@ -11,5 +11,5 @@ public interface PaymentService {
 
     Payment add(Payment payment);
     Payment update(Payment payment);
-    Boolean delete(Long Id);
+    Boolean delete(Long Id) throws ClassNotFoundException;
 }

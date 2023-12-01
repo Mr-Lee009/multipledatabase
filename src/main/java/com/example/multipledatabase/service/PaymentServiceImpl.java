@@ -44,10 +44,12 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public Boolean delete(Long Id) {
-        if (repository.findById(Id) == null)
-            return false;
-        repository.deleteById(Id);
-        return null;
+    public Boolean delete(Long Id) throws ClassNotFoundException {
+        if (repository.findById(Id).isEmpty())
+            throw new ClassNotFoundException("ko tim thay thang nay");
+        else {
+            repository.deleteById(Id);
+            return true;
+        }
     }
 }

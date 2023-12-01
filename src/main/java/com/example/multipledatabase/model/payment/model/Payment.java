@@ -14,7 +14,7 @@ public class Payment {
     @Column(name = "order_id")
     private String orderId;
     @Column(name = "payment_type")
-    private String paymentType;
+    private PaymentType paymentType;
     @Column(name = "amount")
     private BigDecimal amount;
     @Column(name = "string_amount")
